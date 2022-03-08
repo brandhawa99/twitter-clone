@@ -1,10 +1,12 @@
 
 
 import './App.css';
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route,Routes, Redirect } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import {app, auth, db} from './firebase';
-import {GoogleAuthProvider, signInWithPopup,signOut, onAuthStateChanged,signInWithRedirect} from 'firebase/auth'
+import {auth, db} from './firebase';
+import {GoogleAuthProvider, signInWithPopup,signOut, onAuthStateChanged} from 'firebase/auth'
+import {Login} from './Components/Login'
+import {Home} from './Components/Home'
 
 function App() {
   const [loginStatus, setLoginStatus] = useState(false);
@@ -34,28 +36,13 @@ function App() {
 
 
   return (
-    <div className="App">
-      <div id={'firebaseui-auth-container'}>
-        {!loginStatus &&
-            <div> 
-              <h1>Twitter - Clone</h1>
-              <p>Login In</p>
-              <button onClick={signIn}>Sign In With Google</button>
+    <Router>
+      <Routes>
+        <Route path="/"  element={<Login />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </Router>
 
-            </div>
-        
-        }
-        {
-          loginStatus &&
-          <div> 
-            <h1>Hello, {user.displayName}</h1>
-            <button onClick={signOutUser}>Sign out</button>
-          </div>
-
-        }
-        
-      </div>
-    </div>
   );
 }
 
