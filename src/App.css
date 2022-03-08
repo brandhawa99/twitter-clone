@@ -24,15 +24,36 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(230, 70%, 70%);
+}
+.sign-in-container {
+  min-width: 325px;
+  margin-top: 10vh;
+  box-sizing: border-box;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px black solid;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 5px 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sign-in-container button {
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.55rem 0.75rem;
+  border: none;
+}
+.sign-in-container button:hover {
+  background-color: hsl(0, 0%, 80%);
+}
+.sign-in-container h1 {
 }
