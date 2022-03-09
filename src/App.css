@@ -50,10 +50,16 @@
   border-radius: 0.5rem;
   box-sizing: border-box;
   padding: 0.55rem 0.75rem;
-  border: none;
+  border: 1px black solid;
 }
 .sign-in-container button:hover {
-  background-color: hsl(0, 0%, 80%);
+  background-color: hsl(0, 0%, 87%);
+  cursor: pointer;
+}
+.sign-in-container img {
+  width: 35px;
+  height: autoo;
 }
 .sign-in-container h1 {
+  user-select: none;
 }

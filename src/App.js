@@ -5,8 +5,8 @@ import { BrowserRouter as Router, Route,Routes, Redirect } from 'react-router-do
 import { useState, useEffect } from 'react';
 import {auth, db} from './firebase';
 import {GoogleAuthProvider, signInWithPopup,signOut, onAuthStateChanged} from 'firebase/auth'
-import {Login} from './Components/Login'
-import {Home} from './Components/Home'
+import Login from './Components/Login'
+import Home from './Components/Home'
 
 function App() {
   const [loginStatus, setLoginStatus] = useState(false);

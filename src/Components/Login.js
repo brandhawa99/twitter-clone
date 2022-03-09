@@ -1,11 +1,12 @@
 import '../App.css'
-
-export const Login = props =>{
+import img from '../icons/twitterlogo.svg'
+const Login = props =>{
 
 
     return(
         <div className='main-container'>
             <div className="sign-in-container">
+                <img src={img}/>
                 <h1>Twitter Clone</h1>
                 <button>Sign In With Google</button>
 
@@ -40,3 +41,5 @@ export const Login = props =>{
         </div>
     )
 }
+
+export default Login
