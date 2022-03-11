@@ -1,43 +1,35 @@
 import '../App.css'
 import img from '../icons/twitterlogo.svg'
+import google from '../icons/googleG.png'
+import { useNavigate } from 'react-router-dom'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../firebase'
+import { useState } from 'react'
 const Login = props =>{
+  let navigate = useNavigate();
+
+  onAuthStateChanged(auth,(user)=>{
+    if(user){
+      navigate(`/profile/${user.uid}`)
+      
+    }
+  })
+  
 
 
     return(
         <div className='main-container'>
             <div className="sign-in-container">
-                <img src={img}/>
+                <img className='logo-image'src={img} alt="twitter logo"/>
                 <h1>Twitter Clone</h1>
-                <button>Sign In With Google</button>
-
-            </div>
-
-            {/* <>
-          <div className="App">
-            <div id={'firebaseui-auth-container'}>
-            {!loginStatus &&
-                <div> 
-                  <h1>Twitter - Clone</h1>
-                  <p>Login In</p>
-                  <button onClick={signIn}>Sign In With Google</button>
+                <div className='buttons-container'>
+                    
+                    <button className='button' onClick={props.signInUser}><img className='button-image' src={google}  alt='google logo'/>Sign In With Google</button>
+                    <button className='button log-out-button' onClick={props.signOutUser}>Log Out</button>
 
                 </div>
-            
-            }
-            {
-              loginStatus &&
-              <div> 
-                <h1>Hello, {user.displayName}</h1>
-                <button onClick={signOutUser}>Sign out</button>
-              </div>
 
-  }
-            
-          </div>
-        </div>
-
-        </> */}
-            
+            </div>            
         </div>
     )
 }
