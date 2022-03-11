@@ -1,10 +1,21 @@
+import {Link, useParams} from 'react-router-dom'
+import React, { useEffect } from 'react'
+const Home = props =>{ 
+    let params = useParams();
 
-import React from 'react'
-const Home = props =>{
+    // useEffect(()=>{
+    //     console.log('this is from the home',props.currentUser)
+    //     console.log('this is from the params',params.id)
+
+    // },[])
+
 
     return(
-        <div>
-            <h1>Home</h1>
+        <div className='basic'>
+            <button onClick={props.signOutUser}>Log out</button>
+        <h1>Home</h1>
+        <div className='main-container'>
+        </div>
         </div>
     )
 }
