@@ -47,19 +47,55 @@
 }
 
 .sign-in-container button {
-  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 1rem;
   box-sizing: border-box;
   padding: 0.55rem 0.75rem;
   border: 1px black solid;
+  gap: 5px;
+}
+
+.button {
+  background-color: hsl(0, 0%, 93%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  padding: 0.55rem 0.75rem;
+  border: 1px black solid;
+  gap: 5px;
+}
+.button:hover {
+  background-color: hsl(0, 0%, 87%);
+  cursor: pointer;
 }
 .sign-in-container button:hover {
   background-color: hsl(0, 0%, 87%);
   cursor: pointer;
 }
-.sign-in-container img {
+.button-image {
+  width: 15px;
+}
+.logo-image {
   width: 35px;
   height: autoo;
 }
 .sign-in-container h1 {
-  user-select: none;
+}
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+}
+.log-out-button {
+  width: 100px;
+}
+.basic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
