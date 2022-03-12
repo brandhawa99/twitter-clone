@@ -12,6 +12,7 @@ import Home from './Components/Home'
 import Profile from './Components/Profile';
 
 function App() {
+  const[user, setUser] = useState({});
 
 // Sign into your gmail account
     const signIn = async(e) =>{
@@ -29,6 +30,7 @@ function App() {
 
   onAuthStateChanged(auth, (user)=>{
     if(user){
+      setUser(user);
       //if User is new register their data to the firestore database user and tweet collection
       if(Math.abs(user.metadata.createdAt -user.metadata.lastLoginAt) <20){
         //set the references for the user collection and the tweet collection
@@ -65,7 +67,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/"  element={<Login signInUser={signIn}  signOutUser={signOutUser}/>} />
-        <Route path="/profile/:id" element={<Profile signOutUser={signOutUser}/>} /> 
+        <Route path="/profile/:id" element={<Profile signOutUser={signOutUser} user={user}/>} /> 
 
       </Routes>
     </Router>
