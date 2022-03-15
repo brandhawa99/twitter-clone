@@ -1,0 +1,62 @@
+.sidebar {
+  box-sizing: border-box;
+  padding: 2rem 2rem;
+  /* border: 1px black solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.actual-sidebar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.sidebar-button {
+  width: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.sidebar-button img {
+  width: 25px;
+}
+.title {
+  font-size: large;
+  font-weight: 800;
+}
+.sidebar-button-container:hover {
+  background-color: hsl(230, 70%, 65%);
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+.sidebar-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  padding: 0.01rem 1rem;
+}
+.twitter-logo {
+  align-self: flex-start;
+  width: 35px;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+.tweet-button {
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+}
+.tweet-button:hover {
+  background-color: hsl(0, 0%, 90%);
+}
