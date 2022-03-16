@@ -1,8 +1,13 @@
 import React from 'react'
+import FeedElement from './FeedElement'
 
 function Feed() {
   return (
-    <div>Feed</div>
+    <div className='feed-container'>
+        <FeedElement />
+
+
+    </div>
   )
 }
 
