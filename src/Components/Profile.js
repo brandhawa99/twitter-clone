@@ -15,7 +15,7 @@ function Profile(props) {
 
   useEffect(()=>{
     console.log(user)
-  },[])
+  },[user])
 
   onAuthStateChanged(auth,(user)=>{
     if(user){
