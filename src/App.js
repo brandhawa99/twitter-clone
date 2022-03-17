@@ -10,6 +10,7 @@ import {GoogleAuthProvider, signInWithPopup,signOut, onAuthStateChanged} from 'f
 import Login from './Components/Login'
 import Home from './Components/Home'
 import Profile from './Components/Profile';
+import { UserContext } from './UserContext';
 
 function App() {
   const[user, setUser] = useState({});
@@ -17,7 +18,7 @@ function App() {
 // Sign into your gmail account
     const signIn = async(e) =>{
       let provider = new GoogleAuthProvider();
-      const result = await signInWithPopup(auth, provider);
+      await signInWithPopup(auth, provider);
       // console.log(result);
   
     }
@@ -66,8 +67,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/"  element={<Login signInUser={signIn}  signOutUser={signOutUser}/>} />
-        <Route path="/profile/:id" element={<Profile signOutUser={signOutUser} user={user}/>} /> 
+        <UserContext.Provider value='hello this is context'>
+          <Route path="/"  element={<Login signInUser={signIn}  signOutUser={signOutUser}/>} />
+          <Route path="/profile/:id" element={<Profile signOutUser={signOutUser} user={user}/>} /> 
+        </UserContext.Provider>
 
       </Routes>
     </Router>
