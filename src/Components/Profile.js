@@ -15,6 +15,7 @@ function Profile(props) {
 
   useEffect(()=>{
     console.log(user)
+
   },[user])
 
   onAuthStateChanged(auth,(user)=>{
@@ -34,13 +35,9 @@ function Profile(props) {
 
 
   return (
-    <div className='main-container'>
+    <div className='profile-container'>
       <Sidebar />
       <Feed />
-      <h1>{user.displayName}</h1>
-      <img src={user.photoURL} alt='dp'/>
-      {/* <p>{user.metadata.creationTime}</p> */}
-
       <button onClick={logOut}>log out</button>
     </div>
   )

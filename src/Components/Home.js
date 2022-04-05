@@ -11,12 +11,14 @@ const Home = props =>{
 
 
     return(
+        <>
         <div className='basic'>
             <button onClick={props.signOutUser}>Log out</button>
         <h1>Home</h1>
         <div className='main-container'>
         </div>
         </div>
+        </>
     )
 }
 

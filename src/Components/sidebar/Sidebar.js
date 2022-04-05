@@ -11,6 +11,7 @@ import TweetButton from './TweetButton';
 
 function Sidebar() {
   return (
+    <>
     <div className='sidebar'>
       <img className='twitter-logo' src={twitterLogo} alt='twitter-logo'/>
       <div className='actual-sidebar'>
@@ -22,6 +23,7 @@ function Sidebar() {
       </div>
      
     </div>
+    </>
   )
 }
 

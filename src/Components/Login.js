@@ -10,7 +10,7 @@ const Login = props =>{
 
   onAuthStateChanged(auth,(user)=>{
     if(user){
-      navigate(`/profile/${user.uid}`)
+      navigate(`/profile/`)
       
     }
   })

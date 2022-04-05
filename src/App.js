@@ -10,7 +10,6 @@ import {GoogleAuthProvider, signInWithPopup,signOut, onAuthStateChanged} from 'f
 import Login from './Components/Login'
 import Home from './Components/Home'
 import Profile from './Components/Profile';
-import { UserContext } from './UserContext';
 
 function App() {
   const[user, setUser] = useState({});
@@ -66,13 +65,10 @@ function App() {
 
   return (
     <Router>
-      <Routes>
-        <UserContext.Provider value='hello this is context'>
-          <Route path="/"  element={<Login signInUser={signIn}  signOutUser={signOutUser}/>} />
-          <Route path="/profile/:id" element={<Profile signOutUser={signOutUser} user={user}/>} /> 
-        </UserContext.Provider>
-
-      </Routes>
+        <Routes>
+            <Route path="/"  element={<Login signInUser={signIn}  signOutUser={signOutUser}/>} />
+            <Route path="/profile/" element={<Profile signOutUser={signOutUser} user={user}/>} /> 
+        </Routes>
     </Router>
 
   );

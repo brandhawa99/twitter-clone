@@ -1,8 +1,17 @@
 import React from 'react'
 
-function FeedElement() {
+function FeedElement(props) {
   return (
-    <div>FeedElement</div>
+    <div className='tweet-container'>
+      <div className='tweet-sub-container'>
+        <div className='username'>
+          
+        </div>
+
+      </div>
+
+
+    </div>
   )
 }
 
